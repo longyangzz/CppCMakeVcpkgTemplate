@@ -1,7 +1,9 @@
 # CMakeLists.txt
 cmake_minimum_required(VERSION 3.0)
 project(test)
-
+if(CMAKE_TOOLCHAIN_FILE)
+    include(${CMAKE_TOOLCHAIN_FILE})
+endif(CMAKE_TOOLCHAIN_FILE)
 # Find dependencies provided by vcpkg (via vcpkg.cmake)
 find_package(unofficial-sqlite3 CONFIG REQUIRED)
 find_package(fmt CONFIG REQUIRED)
